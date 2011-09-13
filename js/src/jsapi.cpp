@@ -3373,6 +3373,7 @@ JS_AlreadyHasOwnPropertyById(JSContext *cx, JSObject *obj, jsid id, JSBool *foun
         return JS_TRUE;
     }
 
+    id = js_CheckForStringIndex(id);
     *foundp = obj->nativeContains(id);
     return JS_TRUE;
 }
